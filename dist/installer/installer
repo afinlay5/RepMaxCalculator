@@ -1,0 +1,3 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSTALLER - javapackager -deploy -native installer -appclass com.adriandavid.me.RMC -description "Calculate your fitness rep max." -name "Rep Max Calculator" -outdir installer  -outfile RepMaxCalculator -srcdir jar -srcfiles RepMaxCalculator.jar -title "Maximum Repetition Calculator" -height 680 -width 400 -vendor "www.adriandavid.me"
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -9,13 +9,29 @@
   <url>http://maven.apache.org</url>
   
   <build>
+
+    <!--Include resources directory-->
+    <!-- <resources> -->
+      <!-- <resource> -->
+        <!-- <directory>resources/img</directory> -->
+          <!-- <includes> -->
+            <!-- <include>**/*.png</include> -->
+          <!-- </includes> -->
+        <!-- </resource> -->
+    <!-- </resources> -->
+
     <plugins>
+
+        <!-- Maven Compiler Plugin-->    
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.7.0</version>
           <configuration>
               <release>10</release>
+              <manifest>
+                <addClasspath>true</addClasspath>
+              </manifest>
           </configuration>
           <dependencies>
               <dependency>
@@ -25,17 +41,42 @@
               </dependency>
           </dependencies>
       </plugin>
+
+      <!-- Maven JAR Plugin-->    
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.1.0</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>com.adriandavid.me.RMC</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+      </plugin>
+
+    <!--Copy Jar file over to dist/jar and rename-->
+    <!-- <plugin> -->
+      <!-- <groupId>com.coderplus.maven.plugins</groupId> -->
+      <!-- <artifactId>copy-rename-maven-plugin</artifactId> -->
+      <!-- <version>1.0.1</version> -->
+      <!-- <executions> -->
+        <!-- <execution> -->
+          <!-- <id>rename-file</id> -->
+          <!-- <phase>package</phase> -->
+          <!-- <goals> -->
+            <!-- <goal>rename</goal> -->
+          <!-- </goals> -->
+          <!-- <configuration> -->
+            <!-- <sourceFile>target/RepMaxCalculator-1.0-SNAPSHOT.jar</sourceFile> -->
+            <!-- <destinationFile>dist/jar/RepMaxCalculator.jar</destinationFile> -->
+          <!-- </configuration> -->
+        <!-- </execution> -->
+      <!-- </executions> -->
+    <!-- </plugin> -->
+
     </plugins>
   </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-
 </project>

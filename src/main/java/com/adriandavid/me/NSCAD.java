@@ -27,126 +27,126 @@ class NSCAD extends NSCA {
 		this.repnum = repnum;
 		return NSCADob;
 	}
-
+	
 	@Override
 	protected double [] computeMax () {
 					
 		//REPS #1-10
 		switch (repnum) {
 			case 1: {
-				for (var i=0; i<maxArray.length; i++) {
-					if (i==0) 
-						maxArray[i] = maxlb;
+				for (var i1=0; i1<maxArray.length; i1++) {
+					if (i1==0) 
+						maxArray[i1] = maxlb;
 					else
-						maxArray[i] = maxlb/REP[i];
+						maxArray[i1] = maxlb/REP[i1];
 				}
 				break;
 			}
 			
 			case 2: {
-				for (var i=0; i<maxArray.length; i++) {
-					if (i==0) 
-						maxArray[i] = maxlb*REP[1];
-					else if (i==1)
-						maxArray[i] = maxlb;
+				for (var i2=0; i2<maxArray.length; i2++) {
+					if (i2==0) 
+						maxArray[i2] = maxlb*REP[1];
+					else if (i2==1)
+						maxArray[i2] = maxlb;
 					else
-						maxArray[i] = maxlb/REP[i];
+						maxArray[i2] = maxlb/REP[i2];
 				}
 				break;
 			}
 
 			case 3: {
-				for (var i=0; i<maxArray.length; i++) {
-					if (i==0) 
-						maxArray[i] = maxlb*REP[2];
-					else if (i==2)
-						maxArray[i] = maxlb;
+				for (var i3=0; i3<maxArray.length; i3++) {
+					if (i3==0) 
+						maxArray[i3] = maxlb*REP[2];
+					else if (i3==2)
+						maxArray[i3] = maxlb;
 					else
-						maxArray[i] = maxlb/REP[i];
+						maxArray[i3] = maxlb/REP[i3];
 				}
 				break;
 			}
 
 			case 4: {
-				for (var i=0; i<maxArray.length; i++) {
-					if (i==0) 
-						maxArray[i] = maxlb*REP[3];
-					else if (i==3)
-						maxArray[i] = maxlb;
+				for (var i4=0; i4<maxArray.length; i4++) {
+					if (i4==0) 
+						maxArray[i4] = maxlb*REP[3];
+					else if (i4==3)
+						maxArray[i4] = maxlb;
 					else
-						maxArray[i] = maxlb/REP[i];
+						maxArray[i4] = maxlb/REP[i4];
 				}
 				break;
 			}
 
 			case 5: {
-				for (var i=0; i<maxArray.length; i++) {
-					if (i==0) 
-						maxArray[i] = maxlb*REP[4];
-					else if (i==4)
-						maxArray[i] = maxlb;
+				for (var i5=0; i5<maxArray.length; i5++) {
+					if (i5==0) 
+						maxArray[i5] = maxlb*REP[4];
+					else if (i5==4)
+						maxArray[i5] = maxlb;
 					else
-						maxArray[i] = maxlb/REP[i];
+						maxArray[i5] = maxlb/REP[i5];
 				}
 				break;
 			}
 
 			case 6: {
-				for (var i=0; i<maxArray.length; i++) {
-					if (i==0) 
-						maxArray[i] = maxlb*REP[5];
-					else if (i==5)
-						maxArray[i] = maxlb;
+				for (var i6=0; i6<maxArray.length; i6++) {
+					if (i6==0) 
+						maxArray[i6] = maxlb*REP[5];
+					else if (i6==5)
+						maxArray[i6] = maxlb;
 					else
-						maxArray[i] = maxlb/REP[i];
+						maxArray[i6] = maxlb/REP[i6];
 				}
 				break;
 			}
 
 			case 7: {
-				for (var i=0; i<maxArray.length; i++) {
-					if (i==0) 
-						maxArray[i] = maxlb*REP[6];
-					else if (i==6)
-						maxArray[i] = maxlb;
+				for (var i7=0; i7<maxArray.length; i7++) {
+					if (i7==0) 
+						maxArray[i7] = maxlb*REP[6];
+					else if (i7==6)
+						maxArray[i7] = maxlb;
 					else
-						maxArray[i] = maxlb/REP[i];
+						maxArray[i7] = maxlb/REP[i7];
 				}
 				break;
 			}
 		
 			case 8: {
-				for (var i=0; i<maxArray.length; i++) {
-					if (i==0) 
-						maxArray[i] = maxlb*REP[7];
-					else if (i==7)
-						maxArray[i] = maxlb;
+				for (var i8=0; i8<maxArray.length; i8++) {
+					if (i8==0) 
+						maxArray[i8] = maxlb*REP[7];
+					else if (i8==7)
+						maxArray[i8] = maxlb;
 					else
-						maxArray[i] = maxlb/REP[i];
+						maxArray[i8] = maxlb/REP[i8];
 				}
 				break;
 			}
 			
 			case 9: {
-				for (var i=0; i<maxArray.length; i++) {
-					if (i==0) 
-						maxArray[i] = maxlb*REP[8];
-					else if (i==8)
-						maxArray[i] = maxlb;
+				for (var i9=0; i9<maxArray.length; i9++) {
+					if (i9==0) 
+						maxArray[i9] = maxlb*REP[8];
+					else if (i9==8)
+						maxArray[i9] = maxlb;
 					else
-						maxArray[i] = maxlb/REP[i];
+						maxArray[i9] = maxlb/REP[i9];
 				}
 				break;
 			}
 
 			case 10: {
-				for (var i=0; i<maxArray.length; i++) {
-					if (i==0) 
-						maxArray[i] = maxlb*REP[9];
-					else if (i==9)
-						maxArray[i] = maxlb;
+				for (var i10=0; i10<maxArray.length; i10++) {
+					if (i10==0) 
+						maxArray[i10] = maxlb*REP[9];
+					else if (i10==9)
+						maxArray[i10] = maxlb;
 					else
-						maxArray[i] = maxlb/REP[i];
+						maxArray[i10] = maxlb/REP[i10];
 				}
 				break;
 			}

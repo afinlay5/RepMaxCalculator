@@ -1,0 +1,20 @@
+Execute commands from ~/dist
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+EXE -
+javapackager -deploy -native exe -appclass com.adriandavid.me.RMC -description "Calculate your fitness rep max." -name "Rep Max Calculator" -outdir exe  -outfile RepMaxCalculator -srcdir jar -srcfiles RepMaxCalculator.jar -title "Maximum Repetition Calculator" -height 680 -width 400 -vendor "www.adriandavid.me"
+
+APP -
+javapackager -deploy -native mac.appStore -appclass com.adriandavid.me.RMC -description "Calculate your fitness rep max." -name "Rep Max Calculator" -outdir app  -outfile RepMaxCalculator -srcdir jar -srcfiles RepMaxCalculator.jar -title "Maximum Repetition Calculator" -height 680 -width 400 -vendor "www.adriandavid.me"
+
+DEB - 
+javapackager -deploy -native deb -Bcategory=Education -BjvmOptions=-Xmx128m -BjvmOptions=-Xms128m -appclass com.adriandavid.me.RMC -description "Calculate your fitness rep max." -name "Rep Max Calculator" -outdir deb  -outfile RepMaxCalculator -srcdir jar -srcfiles RepMaxCalculator.jar -title "Maximum Repetition Calculator" -height 680 -width 400 -vendor "www.adriandavid.me"
+
+RPM - 
+javapackager -deploy -native rpm -appclass com.adriandavid.me.RMC -description "Calculate your fitness rep max." -name "Rep Max Calculator" -outdir rpm  -outfile RepMaxCalculator -srcdir jar -srcfiles RepMaxCalculator.jar -title "Maximum Repetition Calculator" -height 680 -width 400 -vendor "www.adriandavid.me"
+
+INSTALLER - 
+javapackager -deploy -native installer -appclass com.adriandavid.me.RMC -description "Calculate your fitness rep max." -name "Rep Max Calculator" -outdir installer  -outfile RepMaxCalculator -srcdir jar -srcfiles RepMaxCalculator.jar -title "Maximum Repetition Calculator" -height 680 -width 400 -vendor "www.adriandavid.me"
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -36,7 +36,7 @@ import javafx.scene.layout.BackgroundPosition;
 
 public class RMC extends Application {
 
-	public static void main (String [] args) {	 Application.launch(args);	}
+	public static void main (String [] args) {	 Application.launch(args); 	}
 	
 	//Containers, Components, Primitives, Etc.
 	private ImageView go = null;
@@ -55,7 +55,7 @@ public class RMC extends Application {
 			alert = new Image( new File("resources/img/alert.png").toURI().toString(), true);
 			go = new ImageView (new Image( new File("resources/img/GO!.png").toURI().toString(), true));
 		}
-		catch (Exception exc) {  out.println("Log: Icon Resource not found.");	}
+		catch (Exception exc) {  out.println("Log: Icon Resource not found."); System.exit(0);	}
 		//Set Alert properties
 		INVALID_INPUT.setGraphic( new ImageView(alert));
 		INVALID_INPUT.setTitle("Maximum Repetition Calculator - Invalid Input");
@@ -66,37 +66,12 @@ public class RMC extends Application {
 	
 	@Override
 	public void start(Stage main) {
-		
+
 		/* Splash Screen*/
-		var splash = new Stage();
-		
-		//Add icon
-		splash.getIcons().add(app);
-
-		var delay = new PauseTransition(Duration.seconds(0.5));
-		var splashRootNode = new javafx.scene.layout.StackPane(new ImageView(new Image( new File("resources/img/splash.png").toURI().toString(), true)));
-
-		var inAnim = new FadeTransition(Duration.seconds(3), splashRootNode);
-        inAnim.setFromValue(0);
-        inAnim.setToValue(1);
-        inAnim.setCycleCount(1);
-
-		var outAnim = new FadeTransition(Duration.seconds(3), splashRootNode);
-        outAnim.setFromValue(1);
-        outAnim.setToValue(0);
-        outAnim.setCycleCount(1);
-
-        splash.setScene(new Scene(splashRootNode, 300, 352));
-      
-        inAnim.play();
-        inAnim.setOnFinished((e) -> outAnim.play() );
-        outAnim.setOnFinished((e) -> splash.close() );	
-
-        splash.showAndWait();
-
+		SplashScreen.render(app).showAndWait();		
 
         /* Main Screen */
-        
+
 		//Instantiate RepMax Objects
 		benchpress = NSCAB.getInstance();
 		deadlift = NSCAD.getInstance();
@@ -159,8 +134,8 @@ public class RMC extends Application {
 		var l_weight = new Label("\t\t\t       Weight (Lbs.)");
 		var rep_label = new javafx.scene.layout.HBox (l_rep, l_weight);
 		t_weight = new TextField("0.0");
-		t_rep = new TextField("0.0");
-		var rep_entry = new javafx.scene.layout.HBox(1, t_weight, t_rep);
+		t_rep = new TextField("0");
+		var rep_entry = new javafx.scene.layout.HBox(1, t_rep, t_weight);
 		rep_entry.setAlignment(Pos.CENTER); // not centered
 		
 		var calculate = new Button ();
@@ -237,7 +212,7 @@ public class RMC extends Application {
 			var rep = Double.parseDouble(reps) % 1;
 			if ( rep == 0 ) {
 				var repsAsInt = Integer.parseInt(reps);
-				return (repsAsInt > 0) && (repsAsInt < 10);
+				return ((repsAsInt > 0) && (repsAsInt < 11));
 			}
 			//for 0.0
 			else if (rep == Double.NaN) 
@@ -251,7 +226,13 @@ public class RMC extends Application {
 	/* Assign Max Values */
 	private void setMax (double [] inputArray) {	
 		for (var i=0; i<inputArray.length; i++) {
-			T_RM[i].setText(Double.toString(inputArray[i]));
+			var r = Double.toString(inputArray[i]);
+			if (r.length() - r.indexOf(".") > 3)
+				T_RM[i].setText( r.substring(0, r.indexOf(".")+3) );
+			else if (r.length() - r.indexOf(".") < 3)
+				T_RM[i].setText(r);
+			else 
+				T_RM[i].setText(r);
 		}	
 	}
 	/* Reject input*/
@@ -262,7 +243,7 @@ public class RMC extends Application {
 	    		//Reset Fields
 				for (var weight: T_RM)
 					weight.setText("");
-				t_rep.setText("0.0");
+				t_rep.setText("0");
 				t_weight.setText("0.0");
 	    	}
 	    );

@@ -1,0 +1,3 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+APP - javapackager -deploy -native mac.appStore -appclass com.adriandavid.me.RMC -description "Calculate your fitness rep max." -name "Rep Max Calculator" -outdir app  -outfile RepMaxCalculator -srcdir jar -srcfiles RepMaxCalculator.jar -title "Maximum Repetition Calculator" -height 680 -width 400 -vendor "www.adriandavid.me"
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
